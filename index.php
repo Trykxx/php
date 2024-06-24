@@ -120,14 +120,14 @@
 
     debug($GLOBALS['prenom']);
 
-    echo $_SERVER['REQUEST_TIME']+1235;
+    echo $_SERVER['REQUEST_TIME'] + 1235;
 
     echo '<h2> Les constantes et les constantes magiques </h2>';
 
     // Une constante permet de sauvegarder une valeur fixe
     // Utile pour conserver les parametres de la base de données
     // Par convention une constante se declare toujours en majuscule
-    define('CAPITAL_PAYS','Paris');
+    define('CAPITAL_PAYS', 'Paris');
 
     echo CAPITAL_PAYS;
     const PAYS = 'Algerie';
@@ -168,13 +168,12 @@
     $rouge = 'rouge';
 
     // Afficher bleu,blanc,rouge
-    echo "$bleu-$blanc-$rouge";
-    echo '<br>';
-    echo $bleu . '-' . $blanc . '-' . $rouge;
-    echo '<br>';
+    echo "$bleu-$blanc-$rouge <br>";
+    echo "{$bleu}-{$blanc}-{$rouge} <br>";
+    echo $bleu . '-' . $blanc . '-' . $rouge . "<br>";
 
     // Déclarer un tableau associatif :
-        /*
+    /*
             prenom: Kenza
             nom : Mroudjae
             age: 23
@@ -184,12 +183,63 @@
     $tableauPersonne = ['prenom' => 'Kenza', 'nom' => 'Mroudjae', 'age' => 23, 'telephone' => '06.58.86.94.65'];
 
     // Afficher Bonjour je m'appelle Kenza Mroudjae, j'ai 41 ans et mon numéro de telephone est le ...
-    echo "Bonjour, je m'appelle" . ' ' . $tableauPersonne['prenom'] . ' ' . $tableauPersonne['nom'] .',' . " j'ai" . ' '. $tableauPersonne['age'] . ' ans et mon numéro de téléphone est le ' . $tableauPersonne['telephone'];
+    echo "Bonjour, je m'appelle" . ' ' . $tableauPersonne['prenom'] . ' ' . $tableauPersonne['nom'] . ',' . " j'ai" . ' ' . $tableauPersonne['age'] . ' ans et mon numéro de téléphone est le ' . $tableauPersonne['telephone'];
 
     echo '<br>';
 
-    echo "Bonjour, je m'appelle {$tableauPersonne['prenom']} {$tableauPersonne['nom']}, j'ai {$tableauPersonne['age']} ans et mon numéro de téléphone est le {$tableauPersonne['telephone']}"
+    echo "Bonjour, je m'appelle {$tableauPersonne['prenom']} {$tableauPersonne['nom']}, j'ai {$tableauPersonne['age']} ans et mon numéro de téléphone est le {$tableauPersonne['telephone']}";
+
+    echo '<br>';
+
+
+    // Declarer un tableau d'animaux : chien,tigre,lion,aigle
+
+    $animaux = ['chien', 'tigre', 'lion', 'aigle'];
+
+    // Fonction qui transforme un tableau en chaine de caracteres
+
+    // function arrayToString($array, $separator = ', ') {
+    //     return implode($separator, $array);
+    // };
+
+    // Afficher mes animaux preferes sont : chien,tigre,lion,aigle
+    // $string = arrayToString($animaux);
+    echo "Mes animaux préférés sont :" . implode(', ', $animaux);
+
+    echo "<h2> Les boucles </h2>";
+
+    // Boucler sur le tableau d'animaux pour tous les afficher
+
+    for ($i = 0; $i < count($animaux); $i++) {
+        echo $animaux[$i] . '<br>';
+    };
+
+    foreach ($animaux as $animal) {
+        echo $animal . '<br>';
+    }
+
+    foreach ($tableauPersonne as $key => $info) {
+        echo $key . ' ' . $info . '<br>';
+    }
+
+    echo '<h2> Les fonctions prédéfinies </h2>'
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     ?>
+
+
 
 </body>
 
