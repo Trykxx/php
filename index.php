@@ -222,21 +222,31 @@
         echo $key . ' ' . $info . '<br>';
     }
 
-    echo '<h2> Les fonctions prédéfinies </h2>'
+    echo '<h2> Les fonctions prédéfinies </h2>';
+
+$texte = "Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.";
+
+//extraire 100 premier caractere suivi de ...
+
+echo substr($texte,0,100) . '...' . '<br>';
+// ou
+echo mb_strimwidth($texte,0,100,'...') . '<br>';
+
+// Supprime les espaces au début et à la fin de la chaine de caractère
+$mail = '   edjek@gmail.com   ' . '<br>';
+echo trim($mail);
+
+// Remplace une chaine de caractère par une autre Paul par Rachid
+$message = "Bonjour, je m'appelle Paul. Je suis formateur";
+echo str_replace('Paul','Rachid',$message) . '<br>';
+
+// mettre en minuscule $message
+echo strtoupper($message) . '<br>';
+
+// mettre en minuscule $message
+echo strtolower($message) . '<br>';
 
 
-
-
-
-
-
-
-
-
-
-
-
-    
     ?>
 
 
