@@ -1,0 +1,5 @@
+2 pages contact et accueil
+j'ai le meme header et le meme footer
+decouper et faire des inclusions pour eviter mes repetitions sauf que dans les deux pages je veux un titre différent :
+Bienvenue sur la page d'accueil,
+Bienvenue sur la page contact.

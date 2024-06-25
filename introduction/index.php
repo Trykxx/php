@@ -21,7 +21,7 @@
     // Je suis un commentaire en PHP
     # Je suis aussi un comentaire en PHP
     /*
-    Je suis un commentaire 
+    Je suis un commentaire
     sur plusieurs lignes
     */
 
@@ -224,30 +224,75 @@
 
     echo '<h2> Les fonctions prédéfinies </h2>';
 
-$texte = "Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.";
+    $texte = "Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.";
 
-//extraire 100 premier caractere suivi de ...
+    //extraire 100 premier caractere suivi de ...
 
-echo substr($texte,0,100) . '...' . '<br>';
-// ou
-echo mb_strimwidth($texte,0,100,'...') . '<br>';
+    echo substr($texte, 0, 100) . '...' . '<br>';
+    // ou
+    echo mb_strimwidth($texte, 0, 100, '...') . '<br>';
 
-// Supprime les espaces au début et à la fin de la chaine de caractère
-$mail = '   edjek@gmail.com   ' . '<br>';
-echo trim($mail);
+    // Supprime les espaces au début et à la fin de la chaine de caractère
+    $mail = '   edjek@gmail.com   ' . '<br>';
+    echo trim($mail);
 
-// Remplace une chaine de caractère par une autre Paul par Rachid
-$message = "Bonjour, je m'appelle Paul. Je suis formateur";
-echo str_replace('Paul','Rachid',$message) . '<br>';
+    // Remplace une chaine de caractère par une autre Paul par Rachid
+    $message = "Bonjour, je m'appelle Paul. Je suis formateur";
+    echo str_replace('Paul', 'Rachid', $message) . '<br>';
 
-// mettre en minuscule $message
-echo strtoupper($message) . '<br>';
+    // mettre en minuscule $message
+    echo strtoupper($message) . '<br>';
 
-// mettre en minuscule $message
-echo strtolower($message) . '<br>';
+    // mettre en minuscule $message
+    echo strtolower($message) . '<br>';
 
-
+    $vehicules = ['moto','velo','car','bus'];
     ?>
+
+    <select name="" id="">
+    <?php
+    foreach ($vehicules as $element) { ?>
+        <option value=<?= $element ?>><?= $element ?></option>;
+    <?php } ?>
+    </select>;
+
+<!-- < ? = ouvre un bloc php et un echo en meme temps -->
+
+    <?php
+    echo "<select>";
+    foreach ($vehicules as $element) {
+        echo '<option value ="' . $element . '">' .  $element . '</option>';
+    };
+    echo "</select>"
+    ?>
+
+    <h2>Les inclusions de fichier</h2>
+
+<?php
+
+include './include.php';
+require './include.php';
+
+echo $doranco;
+
+
+echo '<h2>$_GET</h2>'
+
+?>
+
+<?php
+$nom = 'Roig Menda';
+$nom = urlencode($nom);
+
+$prenom = 'Amit Nicolas';
+$prenom = urlencode($nom);
+
+$adresse = '2 guy de maupassant';
+$adresse = urlencode($nom);
+?>
+
+<a href="./get.php?prenom=Nicolas&nom=Roig&adresse=2 guy de maupassant">lien vers la page get.php</a>
+
 
 
 
