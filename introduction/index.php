@@ -285,13 +285,13 @@ $nom = 'Roig Menda';
 $nom = urlencode($nom);
 
 $prenom = 'Amit Nicolas';
-$prenom = urlencode($nom);
+$prenom = urlencode($prenom);
 
 $adresse = '2 guy de maupassant';
-$adresse = urlencode($nom);
+$adresse = urlencode($adresse);
 ?>
 
-<a href="./get.php?prenom=<?=$prenom?>&nom=Roig&adresse=2 guy de maupassant">lien vers la page get.php</a>
+<a href="./get.php?prenom=<?=$prenom?>&nom=<?=$nom?>&adresse=<?=$adresse?>">lien vers la page get.php</a>
 
 
 
