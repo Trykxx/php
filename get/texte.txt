@@ -1,0 +1,14 @@
+on va avoir une page d'accueil
+
+dans laquelle se trouveront 3 liens => renvoie vers une page produit
+
+Les 3 liens passeront en parametres des informations :
+    - le lien bmw : model => bmw, color => jaune, year => 2018
+    - le lien mercedes : model => mercedes, color => bleu, year => 2011
+    - le lien renault : model => renault, color => noir, year => 2022
+
+sur la page produit :
+creer une card =>div
+h2 pour le model
+p pour la couleur
+p pour l'annee de sortie
