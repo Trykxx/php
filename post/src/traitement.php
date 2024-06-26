@@ -1,4 +1,10 @@
 <?php
+// Injection SQL : est une technique qui permet d'injecter du code SQL dans des variables ou bases de données mal protégées.
+// exemple : $sql = "SELECT * FROM users WHERE name = '$name' AND pswd = '$pswd'";
+
+// Faille XSS : Cross-Site Scripting, est une faille qui permet d'injecter du code HTML et/ou Javascript dans des variables ou bases de données mal protégées.
+// exemple : <script>alert('Hello World')</script>
+
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
