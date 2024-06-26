@@ -291,7 +291,7 @@ $adresse = '2 guy de maupassant';
 $adresse = urlencode($nom);
 ?>
 
-<a href="./get.php?prenom=Nicolas&nom=Roig&adresse=2 guy de maupassant">lien vers la page get.php</a>
+<a href="./get.php?prenom=<?=$prenom?>&nom=Roig&adresse=2 guy de maupassant">lien vers la page get.php</a>
 
 
 
