@@ -294,6 +294,49 @@ $adresse = urlencode($adresse);
 <a href="./get.php?prenom=<?=$prenom?>&nom=<?=$nom?>&adresse=<?=$adresse?>">lien vers la page get.php</a>
 
 
+<?php
+    class Hero {
+        public $pseudo;
+        private $vie = 100;
+
+        public function regenerer()
+        {
+            $this->vie = $this->vie+10;
+        }
+
+        public $attributs =[
+            'force' => 75,
+            'puissance' => 80
+        ];
+    }
+
+
+    $batman = new Hero();
+    debug($batman);
+
+    // echo $batman -> vie;
+
+    $batman -> pseudo = 'BATMAN';
+
+    debug($batman);
+
+    echo $batman -> pseudo;
+
+    $batman -> regenerer();
+
+    debug($batman);
+
+    // Creer superman, lui attribuer un pseudo 'SUPERMAN' et 120pts de vie.
+    $superman = new Hero();
+
+    $superman -> pseudo = 'SUPERMAN';
+    // $superman -> vie = 120;
+
+    echo $superman -> attributs['force'];
+
+    debug($superman);
+
+?>
 
 
 </body>
