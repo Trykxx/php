@@ -42,6 +42,8 @@ $books = getAllBooks($pdo);
             </div>
             <?php endforeach; ?>
         </div>
+
+        <a href="./view/addbook.php">Ajoutez un nouveau livre</a>
     </main>
 
     <footer>

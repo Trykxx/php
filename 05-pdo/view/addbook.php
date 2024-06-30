@@ -2,8 +2,8 @@
 <?php
 session_start();
 
-    require_once '../src/config/db.php';
-    require_once '../src/repository/authorRepository.php';
+require_once '../src/config/db.php';
+require_once '../src/repository/authorRepository.php';
 
 $pdo = connectDB();
 $authors = getAllAuthors($pdo);
@@ -18,13 +18,18 @@ $authors = getAllAuthors($pdo);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
-    <section class="container">
-        <h1>Enregistrez un nouveau livre</h1>
-        <form action="../src/traitement.php" method="post">
+
+    <?php 
+    include '../template/header.php'
+    ?>
+
+    <div>
+        <h2>Enregistrez un nouveau livre</h2>
+        <form action="../src/traitement-livre.php" method="post">
             <div>
                 <label for="book">Titre</label>
                 <input type="text" id="book" name="book">
@@ -40,9 +45,9 @@ $authors = getAllAuthors($pdo);
             <div>
                 <label for="author">Nom de l'auteur</label>
                 <select name="author" id="author">
-                    <?php foreach($authors as $author){?>
-                        <option value="<?= $author['id']?>"><?= $author['nom']?> <?= $author['prenom']?></option>
-                        <?php } ?>
+                    <?php foreach ($authors as $author) { ?>
+                        <option value="<?= $author['id'] ?>"><?= $author['nom'] ?> <?= $author['prenom'] ?></option>
+                    <?php } ?>
                 </select>
             </div>
 
@@ -52,10 +57,42 @@ $authors = getAllAuthors($pdo);
             if (isset($_SESSION['message'])) {
                 echo $_SESSION['message'];
                 unset($_SESSION['message']);
-            }?>
+            } ?>
 
         </form>
-    </section>
+    </div>
+    <div>
+        <h2>Enregistrez un nouvel auteur</h2>
+        <form action="../src/traitement-auteur.php" method="post">
+            <div>
+                <label for="last_name">Nom</label>
+                <input type="text" id="last_name" name="last_name">
+            </div>
+            <div>
+                <label for="first_name">Prenom</label>
+                <input type="text" id="first_name" name="first_name">
+            </div>
+            <div>
+                <label for="country">Pays d'origine</label>
+                <input type="text" id="country" name="country">
+            </div>
+            <div>
+                <label for="date">Date de naissance</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <input type="submit" value="Enregistrer">
+
+            <?php
+            if (isset($_SESSION['messageAuthor'])) {
+                echo $_SESSION['messageAuthor'];
+                unset($_SESSION['messageAuthor']);
+            } ?>
+
+        </form>
+    </div>
+
+    <a href="../index.php">Accueil</a>
 
 </body>
 

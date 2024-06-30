@@ -33,3 +33,7 @@ function insertBook($pdo,$nom_livre,$description_livre,$annee_livre,$id_auteur){
 
     $stmt->execute();
 }
+
+// getAllBooks : La fonction prend un paramètre $pdo qui est un objet de connexion à la base de données. Ce paramètre permet à la fonction d'exécuter des requêtes SQL sur la base de données spécifiée.
+    // $pdo : prend un paramètre $pdo qui est un objet de connexion à la base de données. Ce paramètre permet à la fonction d'exécuter des requêtes SQL sur la base de données spécifiée. Il peut avoir le nom qu'on veut.
+    // fetchAll va retourner toutes les lignes dui tableau et PDO::FETCH_ASSOC specifie de les retouner sous forme de tableau associatif.
